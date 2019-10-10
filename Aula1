@@ -11,7 +11,7 @@ cout<<"2 - Guilherme Douces\n";
 cout<<"3 - Giro Comes\n";
 cout<<"4 - Polvo\n";
 cout<<"5 - Brancos\n";
-cout<<"6 - Indecisos\n";
+cout<<"6 - Indecisos ou não optantes\n";
 
 do{ 
 cout<<"Numero do candidato: ";
