@@ -1,0 +1,50 @@
+/********************
+Descrição: Utilização de métodos e atributos estáticos e não estáticos.
+*****/
+
+using System;
+
+class Robo{
+  //Atributo não estático. Cada objeto tem o seu próprio:
+  private string nome;  
+
+  //Atributo estático. 
+  //Pertence à classe, mas é compartilhado com os objetos.
+  private static string mensagem_geral;
+
+  //Método não estático: Cada objeto tem o seu próprio método:
+  public void Mensagem(){
+    Console.WriteLine("[{0}]:{1}",nome, mensagem_geral);
+  }
+
+  //Método estático. Só pode ser acessado diretamente pela classe:
+  public static void NovaMensagem(string msg){
+    mensagem_geral = msg;
+  }
+
+  //construtor da classe: 
+  public Robo(string n){
+    nome = n;
+  }
+
+}
+
+class MainClass {
+  public static void Main (string[] args) {
+    //Criação de objetos do tipo Robo:
+    Robo xpto = new Robo("XPTO");
+    Robo r2d2 = new Robo("R2D2");
+
+    //Utilização do método estático NovaMensagem.
+    //Veja que o método é acessado a partir da clase:
+    Robo.NovaMensagem("Somos todos iguais!");
+
+    //Utilização dos métodos não estáticos de cada objeto:
+    xpto.Mensagem();
+    r2d2.Mensagem();
+
+    Robo.NovaMensagem("Alguns mais iguais que os outros!");
+    xpto.Mensagem();
+    r2d2.Mensagem();
+  }
+}
